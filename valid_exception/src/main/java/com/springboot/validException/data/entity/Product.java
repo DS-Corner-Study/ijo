@@ -1,4 +1,4 @@
-package com.springboot.advanced_jpa.data.entity;
+package com.springboot.validException.data.entity;
 
 import lombok.*;
 
@@ -9,9 +9,11 @@ import java.time.LocalDateTime;
 @Table(name="product")
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode()
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString(exclude = "name")
 public class Product {
 
     @Id
@@ -27,7 +29,7 @@ public class Product {
     @Column(nullable = false)
     private Integer stock;
 
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime createAt;
 
+    private LocalDateTime updateAt;
 }

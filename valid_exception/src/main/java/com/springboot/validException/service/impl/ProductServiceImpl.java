@@ -1,10 +1,10 @@
-package com.springboot.advanced_jpa.service.impl;
+package com.springboot.validException.service.impl;
 
-import com.springboot.advanced_jpa.data.dto.ProductDto;
-import com.springboot.advanced_jpa.data.dto.ProductResponseDto;
-import com.springboot.advanced_jpa.data.entity.Product;
-import com.springboot.advanced_jpa.data.repository.ProductRepository;
-import com.springboot.advanced_jpa.service.ProductService;
+import com.springboot.validException.data.dto.ProductDto;
+import com.springboot.validException.data.dto.ProductResponseDto;
+import com.springboot.validException.data.entity.Product;
+import com.springboot.validException.data.repository.ProductRepository;
+import com.springboot.validException.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +48,8 @@ public class ProductServiceImpl implements ProductService {
         product.setName(productDto.getName());
         product.setPrice(productDto.getPrice());
         product.setStock(productDto.getStock());
-        product.setUpdatedAt(LocalDateTime.now());
-        product.setCreatedAt(LocalDateTime.now());
+        product.setUpdateAt(LocalDateTime.now());
+        product.setCreateAt(LocalDateTime.now());
 
         Product savedProduct = productRepository.save(product);
         LOGGER.info("[saveProduct] savedProduct : {}", savedProduct);
