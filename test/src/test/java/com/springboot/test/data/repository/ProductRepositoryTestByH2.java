@@ -3,9 +3,11 @@ package com.springboot.test.data.repository;
 import com.springboot.test.data.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@DataJpaTest
 public class ProductRepositoryTestByH2 {
     @Autowired
     private ProductRepository productRepository;
